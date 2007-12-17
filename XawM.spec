@@ -14,7 +14,6 @@ Source:    %{name}-%{version}.tar.bz2
 License:   MIT
 Group:     System/Libraries
 BuildRequires: X11-devel
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 An Athena-compatible widget set with a modern look and feel.
