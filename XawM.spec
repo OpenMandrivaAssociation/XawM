@@ -47,6 +47,7 @@ An Athena-compatible widget set with a modern look and feel.
 %patch0 -p0
 
 %build
+autoreconf -fi
 %configure2_5x
 %make
 
