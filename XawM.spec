@@ -11,9 +11,13 @@ Version:   %{version}
 Release:   %{release}
 URL:       http://falconer.best.vwh.net/Widgets/#xawm
 Source:    %{name}-%{version}.tar.bz2
+Patch0:    XawM-1.5u-fix-linkage.patch
 License:   MIT
 Group:     System/Libraries
-BuildRequires: X11-devel
+BuildRequires: libx11-devel
+BuildRequires: libxext-devel
+BuildRequires: libxmu-devel
+BuildRequires: libxt-devel
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
@@ -37,17 +41,16 @@ Provides: libXawM-devel
 An Athena-compatible widget set with a modern look and feel.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
+%patch0 -p0
 
 %build
-%configure
-
+%configure2_5x
 %make
 
 %install
-%makeinstall includedir=$RPM_BUILD_ROOT/usr/X11R6/include
+rm -rf $RPM_BUILD_ROOT
+%makeinstall_std
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
@@ -63,11 +66,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root)
 %doc ChangeLog README* 
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{major}
+%{_libdir}/lib*.so.%{major}.*
 
 %files -n %{libname}-devel
 %defattr(-,root,root)
-/usr/X11R6/include/X11/XawM
+%{_includedir}/X11/XawM
 %{_libdir}/lib*.*a
 %{_libdir}/lib*.so
-
