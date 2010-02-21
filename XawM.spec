@@ -3,7 +3,8 @@
 %define release %mkrel 9
 
 %define major 1
-%define libname %mklibname %name%{major}
+%define libname %mklibname %name %{major}
+%define develname %mklibname -d %name
 
 Summary:   Widget based on Xaw3d
 Name:      %{name}
@@ -30,14 +31,15 @@ Group: System/Libraries
 %description -n %{libname}
 An Athena-compatible widget set with a modern look and feel.
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:  Widget based on Xaw3d
 Group:    Development/C
-Requires: %{libname} = %{version}
-Requires: XFree86-devel
-Provides: libXawM-devel
+Requires: %{libname} = %{version}-%{release}
+Provides: libXawM-devel = %{version}-%{release}
+Provides: XawM-devel = %{version}-%{release}
+Obsoletes: %{_lib}XawM1-devel < %{version}-%{release}
 
-%description -n %{libname}-devel
+%description -n %{develname}
 An Athena-compatible widget set with a modern look and feel.
 
 %prep
@@ -69,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.so.%{major}
 %{_libdir}/lib*.so.%{major}.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_includedir}/X11/XawM
 %{_libdir}/lib*.*a
