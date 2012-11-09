@@ -1,0 +1,21 @@
+--- X11/XawM/Makefile.am.link	2010-02-21 09:32:44.000000000 +0100
++++ X11/XawM/Makefile.am	2010-02-21 09:33:19.000000000 +0100
+@@ -133,6 +133,7 @@
+ 	xutil.h
+ 
+ libXawM_la_LDFLAGS = -version-info 1:0:0
++libXawM_la_LIBADD = -lX11 -lXt -lXmu -lXext
+ 
+ INCLUDES = $(DEBUG) @X_CFLAGS@ -DNARROWPROTO -DARROW_SCROLLBAR -DUSEGRAY \
+ 	-DNeedFunctionPrototypes -I../..
+--- X11/XawM/Makefile.in.link	2010-02-21 09:32:53.000000000 +0100
++++ X11/XawM/Makefile.in	2010-02-21 09:33:53.000000000 +0100
+@@ -232,7 +232,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libXawM_la_LIBADD =
++libXawM_la_LIBADD = -lX11 -lXt -lXmu -lXext
+ am_libXawM_la_OBJECTS = AllWidgets.lo AsciiSink.lo AsciiSrc.lo \
+ 	AsciiText.lo Box.lo Command.lo Dialog.lo Form.lo Grip.lo \
+ 	Label.lo Layout.lo List.lo MenuButton.lo MultiSrc.lo \
