@@ -77,3 +77,51 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/X11/XawM
 %{_libdir}/lib*.*a
 %{_libdir}/lib*.so
+
+
+%changelog
+* Sun Feb 21 2010 Funda Wang <fwang@mandriva.org> 1.5u-9mdv2010.1
++ Revision: 508948
+- autoreconf
+- add missing patch
+- new devel package policy
+- fix build
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - rebuild
+    - rebuild
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 1.5u-5mdv2008.1
++ Revision: 136576
+- restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+    - import XawM
+
+
+* Fri May 19 2006 Thierry Vignaud <tvignaud@mandriva.com> 1.5u-5mdk
+- use %%mkrel
+- fix buildrequires
+
+* Tue Dec 07 2004 Lenny Cartier <lenny@mandrakesoft.com> 1.5u-4mdk
+- rebuild
+
+* Sat Sep 13 2003 Stefan van der Eijk <stefan@eijk.nu> 1.5u-3mdk
+- mklibname (rpmlint)
+- renanme spec file (rpmlint)
+- BuildRequires: XFree86-devel
+- Requires: XFree86-devel --> for devel package (need the
+  /usr/includeX11 symlink)
+- Move files from /usr/include/X11 to /usr/X11R6/include/X11 to avoid
+  clash with XFree86-devel installation (broken symlinks, etc)
+
+* Thu Jan 30 2003 Lenny Cartier <lenny@mandrakesoft.com> 1.5u-2mdk
+- rebuild
+
+* Tue Jan 08 2001 Lenny Cartier <lenny@mandrakesoft.com> 1.5u-1mdk
+- new & needed to update siag
