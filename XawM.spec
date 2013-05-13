@@ -15,10 +15,10 @@ Source:    %{name}-%{version}.tar.bz2
 Patch0:    XawM-1.5u-fix-linkage.patch
 License:   MIT
 Group:     System/Libraries
-BuildRequires: libx11-devel
-BuildRequires: libxext-devel
-BuildRequires: libxmu-devel
-BuildRequires: libxt-devel
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xext)
+BuildRequires: pkgconfig(xmu)
+BuildRequires: pkgconfig(xt)
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
