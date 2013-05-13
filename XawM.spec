@@ -1,6 +1,6 @@
 %define name XawM
 %define version 1.5u
-%define release %mkrel 9
+%define release  10
 
 %define major 1
 %define libname %mklibname %name %{major}
@@ -19,7 +19,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(xmu)
 BuildRequires: pkgconfig(xt)
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 An Athena-compatible widget set with a modern look and feel.
