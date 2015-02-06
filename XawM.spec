@@ -1,6 +1,6 @@
 %define name XawM
 %define version 1.5u
-%define release  10
+%define release  11
 
 %define major 1
 %define libname %mklibname %name %{major}
