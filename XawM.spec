@@ -10,7 +10,7 @@ Summary:   Widget based on Xaw3d
 Name:      %{name}
 Version:   %{version}
 Release:   %{release}
-URL:       http://falconer.best.vwh.net/Widgets/#xawm
+URL:       https://falconer.best.vwh.net/Widgets/#xawm
 Source:    %{name}-%{version}.tar.bz2
 Patch0:    XawM-1.5u-fix-linkage.patch
 License:   MIT
