@@ -15,6 +15,11 @@ Source:    %{name}-%{version}.tar.bz2
 Patch0:    XawM-1.5u-fix-linkage.patch
 License:   MIT
 Group:     System/Libraries
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(xmu)
